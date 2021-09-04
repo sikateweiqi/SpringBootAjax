@@ -1,6 +1,5 @@
 package com.spdb.scc.controller;
 
-import com.google.gson.Gson;
 import com.spdb.scc.entity.ClusterNodeMap;
 import com.spdb.scc.service.IpsService;
 import com.spdb.scc.service.LoadNodeDataService;
@@ -16,14 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-@RequestMapping("/hello")
+@RequestMapping("/scc")
 public class ShowController {
 
     @Autowired
     private LoadNodeDataService loadNodeDataService;
-
-    @Autowired
-    private IpsService ipsService;
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(ModelMap modelMap) {
@@ -32,27 +28,14 @@ public class ShowController {
         return "index";
     }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    @ResponseBody
-    public String home(HttpServletRequest request) {
-
-        System.out.println(new Gson().toJson(ipsService.whiteList()));
-
-//        System.out.println(new Gson().toJson(loadNodeDataService.loadAllNode()));
-
-        return "home";
-    }
-
     @RequestMapping(value = "/data", method = RequestMethod.POST)
     @ResponseBody
     public List<ClusterNodeMap> data(HttpServletRequest request) {
         String request_ip = IpUtil.getIpAddr(request);
+        System.out.println(request_ip);
         List<ClusterNodeMap> node_list = loadNodeDataService.loadAllNode();
         return loadNodeDataService.hidePWDByIp(node_list,request_ip);
     }
-
-
-    //redis 缓存
 
     //更具请求集群名称查询
 }
