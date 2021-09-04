@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title>Test</title>
+    <title>SCC 集群台账</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body ms-controller="viewmodel">
@@ -11,20 +11,24 @@
 <table class="table table-striped">
     <thead>
     <tr>
-        <td class="active">id</td>
-        <td class="success">姓名</td>
-        <td class="warning">性别</td>
-        <td class="danger">年龄</td>
-        <td class="info">角色</td>
+        <td >集群名称</td>
+        <td >编号</td>
+        <td >节点名称</td>
+        <td >PIP</td>
+        <td >OIP</td>
+        <td >用户名</td>
+        <td >密码</td>
     </tr>
     </thead>
     <tbody>
     <tr ms-for="el in @datalist">
-        <td >{{el.id}}</td>
-        <td >{{el.name}}</td>
-        <td>{{el.sex}}</td>
-        <td >{{el.age}}</td>
-        <td >{{el.role}}</td>
+        <td >{{el.cluster}}</td>
+        <td >{{el.order}}</td>
+        <td>{{el.node_name}}</td>
+        <td >{{el.pip}}</td>
+        <td >{{el.oip}}</td>
+        <td >{{el.usr}}</td>
+        <td >{{el.pwd}}</td>
     </tr>
     </tbody>
 </table>

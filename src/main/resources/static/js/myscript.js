@@ -19,7 +19,7 @@ var viewmodel = avalon.define({
 
                 viewmodel.datalist = data;
 
-                viewmodel.text = "数据请求成功，已渲染";
+                viewmodel.text = "数据请求成功";
                 //alert("ok!");
             }
         });

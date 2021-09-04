@@ -1,4 +1,4 @@
-package org.springboot;
+package com.spdb.scc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
