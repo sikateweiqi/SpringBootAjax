@@ -5232,7 +5232,7 @@
                     var validator = copy[name]
                     var p = src[name]
                     if (p && p.onError && p.addField) {
-                        return
+
                     } else if (Object(validator) === validator) {
                         src.vmValidator = validator
                         if (validator.$id) {//转换为普通对象
@@ -8589,4 +8589,3 @@
             /***/ }
         /******/ ])
 });
-;

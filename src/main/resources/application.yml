@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    url: jdbc:mysql://localhost:3306/K8S?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&connectionTimeout=3000&socketTimeout=1200
+    url: jdbc:mysql://10.245.109.13:3306/K8S?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&connectionTimeout=3000&socketTimeout=1200
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
